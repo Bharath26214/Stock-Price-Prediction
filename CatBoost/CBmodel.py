@@ -4,10 +4,10 @@ from catboost import CatBoostRegressor
 import joblib
 import os
 
-price_file = r"data/us_stock_data_2years_with_cleaned.csv"
-sent_file  = r"data/sentiment_scores.csv"
-model_file = r"data/vectrastock_catboost_model_norm.cbm"
-meta_file  = r"data/model_meta_norm.pkl"
+price_file = r"/Users/bharathkumar/Documents/Stock Price Prediction/CatBoost/data/us_stock_data_2years_with_cleaned.csv"
+sent_file  = r"/Users/bharathkumar/Documents/Stock Price Prediction/CatBoost/data/sentiment_scores.csv"
+model_file = r"/Users/bharathkumar/Documents/Stock Price Prediction/CatBoost/data/vectrastock_catboost_model_norm.cbm"
+meta_file  = r"/Users/bharathkumar/Documents/Stock Price Prediction/CatBoost/data/model_meta_norm.pkl"
 
 print("Loading data...")
 p = pd.read_csv(price_file)

@@ -7,9 +7,9 @@ from sklearn.preprocessing import MinMaxScaler
 from torch.utils.data import DataLoader, Dataset
 from datetime import datetime, timedelta
 
-data_dir = "data/historical"
-model_dir = "data/models"
-pred_dir = "data/predictions"
+data_dir = "/Users/bharathkumar/Documents/Stock Price Prediction/LSTM/data/historical"
+model_dir = "/Users/bharathkumar/Documents/Stock Price Prediction/LSTM/data/models"
+pred_dir = "/Users/bharathkumar/Documents/Stock Price Prediction/LSTM/data/predictions"
 os.makedirs(model_dir, exist_ok=True)
 os.makedirs(pred_dir, exist_ok=True)
 
@@ -55,7 +55,7 @@ def train_model(ticker, data, scaler):
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
     model = LSTMModel().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    criterion = nn.MSELoss()
+    criterion = nn.MAELoss()
 
     for epoch in range(epochs):
         total_loss = 0
